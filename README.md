@@ -2,7 +2,6 @@
 
 > 
 
-📅 **Deadline:** 19th June, 11:59 PM
 
 ---
 
