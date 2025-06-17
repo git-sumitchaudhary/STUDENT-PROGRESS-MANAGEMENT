@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Progress Management</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class', // Enable class-based dark mode
+      theme: {
+        extend: {
+          colors: {
+            primary: { // Updated to lighter blues
+              light: '#3B82F6', // Was #4A90E2 (Tailwind blue-500 / vibrant light blue)
+              DEFAULT: '#2563EB', // Was #357ABD (Tailwind blue-600 / main light blue)
+              dark: '#1D4ED8',    // Was #2A6DA4 (Tailwind blue-700 / deeper light blue)
+            },
+            secondary: {
+              light: '#50E3C2', // A teal/mint color
+              DEFAULT: '#38B2AC',
+              dark: '#2C7A7B',
+            },
+            background: {
+              light: '#F7FAFC', // Very light gray
+              dark: '#111827', // Dark gray - CHANGED from #1A202C (Tailwind gray-900)
+            },
+            card: {
+              light: '#FFFFFF',
+              dark: '#1F2937', // Slightly lighter than background dark - CHANGED from #2D3748 (Tailwind gray-800)
+            },
+            text: {
+              light: '#2D3748', // Dark gray for light mode
+              dark: '#E2E8F0', // Light gray for dark mode
+            },
+            muted: {
+              light: '#718096', // Medium gray
+              dark: '#A0AEC0', // Lighter gray for dark mode
+            }
+          },
+          animation: {
+            'spin-slow': 'spin 3s linear infinite',
+            // 'modal-appear': 'modalAppear 0.3s ease-out forwards', // Will be replaced by Framer Motion
+          },
+          keyframes: {
+            // modalAppear: { // Will be replaced by Framer Motion
+            //   '0%': { opacity: '0', transform: 'scale(0.95) translateY(20px)' },
+            //   '100%': { opacity: '1', transform: 'scale(1) translateY(0)' },
+            // }
+          }
+        },
+      },
+    }
+  </script>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.2",
+    "uuid": "https://esm.sh/uuid@^11.1.0",
+    "recharts": "https://esm.sh/recharts@^2.15.3",
+    "framer-motion": "https://esm.sh/framer-motion@^11.3.19"
+  }
+}
+</script>
+  <!-- 
+    NOTE: If you encounter module resolution errors like "Cannot find module '@/...'" 
+    or "module ... does not provide an export named '...' from '@/...'", 
+    it might be due to browser caching an old version of a file. 
+    The '@/' alias is not used for local module imports in this project; all local imports are relative.
+    Please try clearing your browser's cache (especially for scripts/JavaScript files) or perform a hard refresh 
+    (e.g., Ctrl+Shift+R or Cmd+Shift+R).
+  -->
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
